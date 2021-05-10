@@ -18,14 +18,24 @@ let fib = [];
 fib[0] = 0;
 fib[1] = 1;
 
+// function fibonacci(iterator) {
+//   for (let j = 2; j <= 8; j++) {
+//     fib[j] = fib[j - 2] + fib[j - 1];
+//     console.log(fib[j]);
+//   }
+// }
+
+// fibonacci(8);
+
+let j = 2;
 function fibonacci(iterator) {
   if (iterator >= 8) {
     return;
   }
-  for (let j = 2; j <= 8; j++) {
-    fib[j] = fib[j - 2] + fib[j - 1];
-    console.log(fib[j]);
-  }
+  fib[j] = fib[j - 2] + fib[j - 1];
+  console.log(fib[j]);
+  j++;
+  fibonacci(iterator + 1);
 }
 
-fibonacci(8);
+fibonacci(1);
