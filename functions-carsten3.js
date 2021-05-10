@@ -28,14 +28,19 @@ fib[1] = 1;
 // fibonacci(8);
 
 let j = 2;
+
 function fibonacci(iterator) {
-  if (iterator >= 8) {
-    return;
+  if (iterator === 1) {
+    return [0, 1];
+  } else {
+    let str = fibonacci(iterator - 1);
+    str.push(str[str.length - 1] + str[str.length - 2]);
+    return str;
+    //   fib[j] = fib[j - 2] + fib[j - 1];
+    //   console.log(fib[j]);
+    //   j++;
+    //   fibonacci(iterator + 1);
   }
-  fib[j] = fib[j - 2] + fib[j - 1];
-  console.log(fib[j]);
-  j++;
-  fibonacci(iterator + 1);
 }
 
-fibonacci(1);
+console.log(fibonacci(8));
